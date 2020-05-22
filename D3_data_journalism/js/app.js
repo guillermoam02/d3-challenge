@@ -138,6 +138,10 @@ d3.csv("D3_data_journalism/data/data.csv").then(function(data, err) {
     .call(leftAxis);
 
   // append initial circles
+
+  chartGroup.selectAll("text").remove();
+  chartGroup.selectAll("circle").remove();
+
   var circlesGroup = chartGroup.selectAll("circle")
     .data(data)
     .enter()
@@ -145,9 +149,9 @@ d3.csv("D3_data_journalism/data/data.csv").then(function(data, err) {
     .attr("cx", d => xLinearScale(d[chosenXAxis]))
     .attr("cy", d => yLinearScale(d.healthcare))
     .attr("r", 12)
-    .attr("fill", "#843c39")
+    .attr("fill", "#760606")
     .attr("stroke-width", "1.5")
-    .attr("stroke", "gold")
+    .attr("stroke", "gold");
 
   var txtGroup = chartGroup.selectAll("text")
     .data(data)
